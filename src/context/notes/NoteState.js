@@ -2,7 +2,7 @@ import { useState } from "react";
 import NoteContext from "./noteContext";
 
 const Notestate = (props) => {
-  const host = "http://localhost:5000";
+  const host = "https://notes-app-2nus.onrender.com";
   const notesinitial = [];
   const [notes, setNotes] = useState(notesinitial);
 
@@ -16,6 +16,7 @@ const Notestate = (props) => {
           localStorage.getItem('token'),
       },
     });
+    
     const json = await response.json()
     setNotes(json)
   }
@@ -32,12 +33,12 @@ const Notestate = (props) => {
       },
       body: JSON.stringify({ title, description, tag }),
     });
-    const note =await response.json();
+    const note = await response.json();
     setNotes(notes.concat(note));
   };
 
   //Delete a note - Done
-  const deleteNote = async(id) => {
+  const deleteNote = async (id) => {
     const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
       method: "DELETE",
       headers: {
@@ -85,7 +86,7 @@ const Notestate = (props) => {
   };
 
   return (
-    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote,getNotes }}>
+    <NoteContext.Provider value={{ notes, addNote, deleteNote, editNote, getNotes }}>
       {props.children}
     </NoteContext.Provider>
   );
