@@ -13,6 +13,9 @@
   }
 }
 
+body{
+  background-color: #fff9de61 !important;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,4 +38,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.box-login{
+  border-radius: 10px;
+  box-shadow: 1px 1px 22px #282c345e
 }

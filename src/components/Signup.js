@@ -38,7 +38,9 @@ const Signup = (props) => {
 
 
   return (
-    <>
+    <div className="d-flex justify-content-center">
+
+    <div className="col-12 col-md-6 col-lg-4 box-login mt-4 p-5">
         <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="exampleInputEmail1" className="form-label">
@@ -118,7 +120,8 @@ const Signup = (props) => {
           SignIn
         </button>
       </form>
-    </>
+    </div>
+    </div>
   )
 }
 

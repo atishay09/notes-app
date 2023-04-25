@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Signup from "./components/Signup";
 import Notestate from "./context/notes/NoteState";
+import "./App.css"
 
 const App = () => {
   const [alert,setAlert] = useState(null);

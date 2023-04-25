@@ -16,7 +16,7 @@ const Notestate = (props) => {
           localStorage.getItem('token'),
       },
     });
-    
+
     const json = await response.json()
     setNotes(json)
   }

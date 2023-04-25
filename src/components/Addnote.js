@@ -12,6 +12,7 @@ const Addnote = ({showAlert}) => {
     const handleclick = (e)=>{
         e.preventDefault();
         addNote(newNote.title,newNote.description,newNote.tag)
+        debugger
         showAlert("Note Added Sucessfully",'success')
         setnewNote({title:"",description:"",tag:""})
     }
@@ -21,7 +22,9 @@ const Addnote = ({showAlert}) => {
     }
 
   return (
-    <>
+    <div className="d-flex justify-content-center">
+
+    <div className="col-12 col-md-6 col-lg-4 box-login mt-4 p-5">
       <div className="container my-3">
         <h2>Add a Note</h2>
         <form>
@@ -36,7 +39,6 @@ const Addnote = ({showAlert}) => {
               name="title"
               aria-describedby="emailHelp"
               onChange={onChange}
-              minLength = {5}
               required
               value={newNote.title}
             />
@@ -51,7 +53,6 @@ const Addnote = ({showAlert}) => {
               id="description"
               name="description"
               onChange={onChange}
-              minLength = {5}
               required
               value={newNote.description}
             />
@@ -70,12 +71,13 @@ const Addnote = ({showAlert}) => {
             />
           </div>
           
-          <button disabled= {newNote.title.length<5 || newNote.description.length<5} type="submit" onClick={handleclick} className="btn btn-primary">
+          <button onClick={handleclick} className="btn btn-primary">
             Add Note
           </button>
         </form>
       </div>
-    </>
+    </div>
+    </div>
   );
 };
 
